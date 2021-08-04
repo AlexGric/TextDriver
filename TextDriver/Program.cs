@@ -19,8 +19,11 @@ namespace TextDriver
 
                 if (cki.Key == ConsoleKey.E) // end reading when 'E' pressed
                 {
-                    Driver(line); // function for line check
-                    line = null; //Nullification of the line for new text
+                    if (line.Contains(":E"))
+                    {
+                        Driver(line); // function for line check
+                        line = null; //Nullification of the line for new text
+                    }
                 }
             } while (cki.Key != ConsoleKey.F2);// Exit on F2 key press
         }
